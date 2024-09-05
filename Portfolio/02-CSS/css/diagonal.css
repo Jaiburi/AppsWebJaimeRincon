@@ -1,3 +1,25 @@
-body {
-    margin: 0;
+.top-container {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: relative;
+    border: 10px solid black;
+}
+
+.middle-container {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: relative;
+    left: 220px;
+    border: 20px solid black;
+}
+
+.bottom-container {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    position: relative;
+    left: 460px;
+    border: 10px solid black;
 }
