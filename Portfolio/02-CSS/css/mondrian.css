@@ -1,0 +1,55 @@
+div {
+    border: 7px solid black;
+    max-width: fit-content;
+    padding: 3px;
+}
+
+tr{
+    margin: 0px;
+}
+
+td{
+    border: 3px solid black;
+    margin: 0px;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+.primera {
+    height: 20px;
+}
+
+.segunda {
+    height: 100px;
+}
+
+.tercera {
+    height: 40px;
+}
+
+.cuarta {
+    height: 15px;
+}
+
+.prim{
+    width: 20px;
+}
+
+.segu{
+    width: 100px;
+}
+
+.terc{
+    width: 30px;
+}
+
+.cuar{
+    width: 90px;
+}
+
+.quin{
+    width: 60px;
+}
+
