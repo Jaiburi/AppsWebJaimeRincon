@@ -1,3 +1,149 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #eaf4ff; 
+}
+
+div {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px 40px;
+  background-color: #ffffff; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+}
+
+a {
+  margin: 0px 5px 0px 5px;
+  color: #003366; 
+  text-decoration: none; 
+}
+
+a:hover {
+  color: #009e7c;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  color: #003366; 
+}
+
+h1 {
+  font-family: 'Sacramento', cursive;
+  font-size: 5.5rem;
+  margin: 50px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  padding: 8px;
+  color:#156db1
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color:#2b8fdb
+}
+
+p {
+  margin: 20px 0px 20px 0px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #cce5ff; 
+}
+
+table, th, td {
+  border: 1px solid #99c2ff;
+}
+
+th {
+  background-color: #66b2ff; 
+  color: #ffffff; 
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px; 
+}
+
+hr {
+  border: 0; 
+  border-top: 6px dotted #6493f7; 
+  width: 4%; 
+  margin: 20px 0; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+label {
+  color: #003366; 
+}
+
+input, select, textarea {
+  border: 1px solid #99c2ff; 
+  border-radius: 4px; 
+  padding: 10px;
+  width: 100%;
+  max-width: 300px; 
+}
+
+input[type="color"] {
+  width: 50px;
+  height: 50px;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
+
+ul li, ol li {
+  padding: 10px;
+  background-color: #cce5ff; 
+  margin: 5px 0;
+  border-radius: 4px; 
+}
+
+.points {
+  margin: 20px; 
+}
+
+.logos {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  border-radius: 50px;
 }
