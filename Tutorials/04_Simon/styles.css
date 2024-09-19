@@ -24,11 +24,13 @@ body {
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
+  transition: transform 0.1s, opacity 0.1s;
 }
 
 .game-over {
   background-color: red;
   opacity: 0.8;
+  animation: shake 0.5s; 
 }
 
 .red {
@@ -50,4 +52,14 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+  transform: scale(0.9); 
+  opacity: 0.8; 
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
 }
