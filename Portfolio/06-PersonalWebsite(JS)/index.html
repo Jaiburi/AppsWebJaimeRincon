@@ -1,12 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link href="./css/styles.css" type="text/css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="formhandler.js" defer></script>
 </head>
 <body>
+  <div>
+      <h1>Jaime Rincón Burboa</h1>
+      <table>
+          <tr>
+              <td>
+                  <img src="./images/yo.jpg" alt="Imagen de Jaime Rincón Burboa" width="200px"/>
+              </td>
+              <td>
+                  <p><strong>Box of surprises</strong><br/>Pirules 130</p>
+                  <blockquote>
+                      "At the end everything is gonna be fine, if it's not fine, then it's still not the end"
+                      <br/>Fedelobo
+                  </blockquote>
+                  <p>Best Clash of Clans and Roblox player. Likes to read fantasy books and ride bicycle.</p>
+              </td>
+          </tr>
+      </table>
+  </div>
   
+  <div>
+      <p><a href="#education">Education</a> <a href="#skills">Skills</a> <a href="#hobbies">Hobbies</a>
+        <a href="#entertainment">Entertainment</a> <a href="#bdays">Birthdays</a> <a href="#scientist">Favorite Scientists</a>
+        <a href="#schedule">Schedule</a> <a href="#forms">Form</a></p>
+      <h2>Background</h2>
+      <p>Second to last son of a 5 child family, I was born in Culiacan, Sinaloa, 15th September 2004. 
+        My parents raised me in a love environment but nonetheless they were though on the rules, school and 
+        discipline.</p>
+  
+      <h2 id="education">Education</h2>
+      <ul class="schools">
+          <li class="points"><em>2006-2009:</em><b>Kinder Los Girasoles</b><img src="./images/Kinder.jfif" alt="Logo of Kinder Los Girasoles" class="logos"/></li>
+          <li class="points"><em>2010-2022:</em><b>Elementary, Middle and Highschool Instituto Chapultepec</b><img src="./images/INSTITUTOS.jpg" alt="Logo of Instituto Chapultepec" class="logos"/></li>
+          <li class="points"><em>2023-2028:</em><b>Universidad Panamericana</b><img src="./images/up.png" alt="Logo of Universidad Panamericana" class="logos"/></li>
+      </ul>
+  </div>
+  
+  <div>
+      <h2 id="skills">Skills</h2>
+      <ol start="1" type="I">
+          <li>Pro Player: 100%</li>
+          <li>Reader: 80%</li>
+          <li>Cyclist: 70%</li>
+          <li>Problem Solver: 80%</li>
+          <li>Chef: 40%</li>
+      </ol>
+  </div>
+  
+  <div>
+      <h2 id="hobbies">Hobbies</h2>
+      <h3>Favorite food</h3>
+      <h4>Top 5 cuisines</h4>
+      <ol id="top5">
+          <li>Mexican</li>
+          <li>Spanish</li >
+          <li>Japanese</li>
+          <li>French</li>
+          <li>Korean</li>
+      </ol>
+      <h2>Bottom 3 cuisines</h4>
+      <ol start="19" id="bot3">
+          <li>Indian</li>
+          <li>German</li>
+          <li>Thai</li>
+      </ol>
+  
+      <h2 id="entertainment">Books, Movies & Shows</h3>
+      <ul>
+          <li><span>Books</span>
+              <ol>
+                  <img src="./images/mistborn.jpg" alt="Imagen de Mistborn" width="300px"/>
+                  <li>Mistborn</li>
+                  <li>The Way of Kings</li>
+                  <li>Kingkiller Chronicles</li>
+                  <li>Cytonic</li>
+                  <li>The Wheel of Time</li>
+              </ol>
+          </li>
+          <li><span>Movies</span>
+              <ol>
+                  <img src="./images/spider-man.jpg" alt="Imagen de Spider Man" width="300px"/>
+                  <li>Your Name</li>
+                  <li>Spiderman: Into The Spider verse</li>
+                  <li>Monsters Inc.</li>
+              </ol>
+          </li>
+          <li><span>Shows</span>
+              <ol>
+                  <img src="./images/gravity.png" alt="Imagen de Gravity Falls" width="300px"/>
+                  <li>Adventure Time</li>
+                  <li>Steven Universe</li>
+                  <li>Gravity Falls</li>
+              </ol>
+          </li>
+      </ul>
+  </div>
+  
+  <div>
+      <h3 id="bdays">Family Birthdays</h2>
+      <table border="1">
+          <thead>
+              <tr>
+                  <th align="Center" colspan="2">Full Name</th>
+                  <th align="Center" rowspan="2">Birthday</th>
+              </tr>
+              <tr>
+                  <th align="Center">Name</th>
+                  <th align="Center">Lastname</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td align="Center">Jaime</td>
+                  <td align="Center">Rincon Torres</td>
+                  <td align="Center">December 14th</td>
+              </tr>
+              <tr>
+                  <td align="Center">Adelaida</td>
+                  <td align="Center">Burboa Fierro</td>
+                  <td align="Center">May 4th</td>
+              </tr>
+              <tr>
+                  <td align="Center">Jaime</td>
+                  <td align="Center">Rincon Burboa</td>
+                  <td align="Center">September 15th</td>
+              </tr>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td align="Center" colspan="3">3 people</td>
+              </tr>
+          </tfoot>
+          <caption>Birthdays of my family</caption>
+      </table>
+  </div>
+  <div>
+    <h3 id="scientist">Favorite Scientists</h2>
+    <table border="1" style="width:100%; text-align:center; border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Date of Birth / Death</th>
+                <th>Profession</th>
+                <th>Achievements / Famous Work</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="./images/albert.jfif" alt="Albert Einstein" width="150px"></td>
+                <td>Albert Einstein</td>
+                <td>1879-1955</td>
+                <td>Theoretical Physicist</td>
+                <td>Developed the theory of relativity, E = mc²</td>
+            </tr>
+            <tr>
+                <td><img src="./images/marie.jpg" alt="Marie Curie" width="150px"></td>
+                <td>Marie Curie</td>
+                <td>1867-1934</td>
+                <td>Physicist, Chemist</td>
+                <td>Research on radioactivity, two-time Nobel Prize winner</td>
+            </tr>
+            <tr>
+                <td><img src="./images/isaac.jpg" alt="Isaac Newton" width="150px"></td>
+                <td>Isaac Newton</td>
+                <td>1643-1727</td>
+                <td>Mathematician, Physicist</td>
+                <td>Laws of motion and universal gravitation</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div>
+    <h3 id="schedule">Weekly Schedule</h1>
+    <table id="schedule-table">
+        <thead>
+            <tr>
+                <th>Busy/Free</th>
+                <th>Date</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Description</th>
+                <th>Place</th>
+                <th>Type</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="schedule-body">
+            <!-- New rows are appended here -->
+        </tbody>
+    </table>
+  </div>
+  <div>
+    <h3 id="forms">Weekly Schedule Form</h3>
+    <form action="#" method="POST">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <hr>
+        <label for="start-time">Time Start:</label>
+        <input type="time" id="start-time" name="start-time" required>
+        <hr>
+        <label for="end-time">Time End:</label>
+        <input type="time" id="end-time" name="end-time" required>
+        <hr>
+        <label for="activity">Activity:</label>
+        <input type="text" id="activity" name="activity" placeholder="Enter activity" required>
+        <hr>
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place" placeholder="Enter place" required>
+        <hr>
+        <label for="type">Type:</label>
+        <select id="type" name="type" required>
+            <option value="school">School</option>
+            <option value="personal">Personal</option>
+            <option value="professional">Professional</option>
+            <option value="familiar">Familiar</option>
+            <option value="other">Other</option>
+        </select>
+        <hr>
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Add notes..."></textarea>
+        <hr>
+        <label for="flag">Flag Color:</label>
+        <input type="color" id="flag" name="flag">
+        <hr>
+        <label>Free/Busy:</label>
+        <label for="busy">Busy</label>
+        <input type="checkbox" id="busy" name="busy">
+        <button type="submit">Submit</button>
+    </form>
+</div>
 </body>
 </html>

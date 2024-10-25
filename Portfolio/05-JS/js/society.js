@@ -23,37 +23,51 @@ var myGameArea = {
 function flatlander(width, height, x, y, isHappy) {
   this.image = new Image();
   this.isHappy = isHappy;
-  if (isHappy) {
-    this.happyPoints = 1;
-    this.image.src = happySrc;
-  } else {
-    this.happyPoints = -1;
-    this.image.src = sadSrc;
-  }
+  this.happyPoints = isHappy ? 1 : -1; // Initialize happyPoints based on happiness
+  this.image.src = isHappy ? happySrc : sadSrc;
   this.width = width;
   this.height = height;
   this.speedX = (Math.random() * 100) % 6;
   this.speedY = (Math.random() * 100) % 6;
   this.x = x;
   this.y = y;
+
   this.update = function () {
     ctx = myGameArea.context;
     ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     ctx.fillText(this.happyPoints, this.x, this.y + 5);
   };
+
   this.newPos = function (canvasWidth, canvasHeight) {
-    // TODO: Update the x, y position using the this.speedX and this.speedY
-    // values of the object. Make sure that when they reach an edge, they
-    // bounce back.
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    // Bounce back when reaching the edges
+    if (this.x < 0 || this.x + this.width > canvasWidth) {
+      this.speedX = -this.speedX;
+    }
+    if (this.y < 0 || this.y + this.height > canvasHeight) {
+      this.speedY = -this.speedY;
+    }
   };
+
   this.moreHappy = function () {
-    // TODO: increase the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    this.happyPoints++;
+    if (this.happyPoints > 1) {
+      this.isHappy = true;
+      this.image.src = happySrc;
+    }
   };
+
   this.lessHappy = function () {
-    // TODO: decrease the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    this.happyPoints--;
+    if (this.happyPoints < 0) {
+      this.isHappy = false;
+      this.happyPoints = -1; // Set happyPoints to -1 for sad individuals
+      this.image.src = sadSrc;
+    }
   };
+
   this.checkSurroundings = function (other) {
     var x = Math.pow(this.x - other.x, 2);
     var y = Math.pow(this.y - other.y, 2);
@@ -62,20 +76,23 @@ function flatlander(width, height, x, y, isHappy) {
 }
 
 function startGame() {
-  // TODO: make sure to get all the values from the screen
-  var n = 1;
-  var m = 1;
-  if (parseInt(m) > parseInt(n)) {
-    window.alert("Can not have more sad than individuals.");
+  var n = parseInt(document.getElementById("num").value);
+  var m = parseInt(document.getElementById("sad").value);
+  
+  if (m > n) {
+    window.alert("Cannot have more sad individuals than total individuals.");
     return;
   }
-  var sad = 0;
-  for (i = 0; i < n; i++) {
-    //var rand = Math.random() * 100;
-    // 30% of chance of getting an angry subject
-    var nX = (Math.random() * 10000) % myGameArea.canvas.width;
-    var nY = (Math.random() * 10000) % myGameArea.canvas.height;
-    var gamePiece = new flatlander(30, 30, nX, nY, ++sad > m);
+
+  myGamePiece = []; // Reset the game pieces
+  var sadCount = 0;
+
+  for (var i = 0; i < n; i++) {
+    var nX = Math.random() * myGameArea.canvas.width;
+    var nY = Math.random() * myGameArea.canvas.height;
+    var isHappy = sadCount < m ? false : true; // Determine if the individual is happy or sad
+    if (!isHappy) sadCount++;
+    var gamePiece = new flatlander(30, 30, nX, nY, isHappy);
     myGamePiece.push(gamePiece);
   }
   myGameArea.start();
@@ -84,32 +101,36 @@ function startGame() {
 function updateGameArea() {
   if (myGameArea.running) {
     myGameArea.clear();
-    for (i = 0; i < myGamePiece.length; i++) {
+    for (var i = 0; i < myGamePiece.length; i++) {
       myGamePiece[i].newPos(myGameArea.canvas.width, myGameArea.canvas.height);
       myGamePiece[i].update();
     }
     var tmpFocus, d;
     var happy = 0;
     var sad = 0;
-    for (i = 0; i < myGamePiece.length; i++) {
+    for (var i = 0; i < myGamePiece.length; i++) {
       tmpFocus = myGamePiece[i];
-      for (j = i + 1; j < myGamePiece.length; j++) {
-        d = tmpFocus.checkSurroundings(myGamePiece[j]);
-        if (d < maxDist) {
-          if (myGamePiece[j].isHappy) {
-            tmpFocus.moreHappy();
-          } else {
-            tmpFocus.lessHappy();
+      for (var j = 0; j < myGamePiece.length; j++) {
+        if (i != j) {
+          d = tmpFocus.checkSurroundings(myGamePiece[j]);
+          if (d < maxDist) {
+            if (tmpFocus.isHappy && !myGamePiece[j].isHappy) {
+              tmpFocus.lessHappy(); // Happy individual becomes less happy
+            } else if (!tmpFocus.isHappy && myGamePiece[j].isHappy) {
+              myGamePiece[j].lessHappy(); // Sad individual makes happy individual sad
+            } else if (tmpFocus.isHappy && myGamePiece[j].isHappy) {
+              tmpFocus.moreHappy(); // Happy individual becomes even happier
+              myGamePiece[j].moreHappy();
+            } else if (!tmpFocus.isHappy && !myGamePiece[j].isHappy) {
+              tmpFocus.lessHappy(); // Sad individual becomes even sadder
+              myGamePiece[j].lessHappy();
+            }
           }
         }
       }
-      if (tmpFocus.isHappy) {
-        happy++;
-      } else {
-        sad++;
-      }
+      if (tmpFocus.isHappy) happy++;
+      else sad++;
     }
-    myGameArea.timer++;
     document.getElementById("happyIndividuals").textContent = "Happy: " + happy;
     document.getElementById("sadIndividuals").textContent = "Sad: " + sad;
   } else return;
