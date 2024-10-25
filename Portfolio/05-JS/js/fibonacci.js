@@ -1,27 +1,33 @@
-/*
-    Fibonacci Sequence - Enter a number and have the program
-    generate the Fibonacci sequence to that number or to the Nth number.
-*/
-// This array will keep memory of the previous fibonacci numbers
+// This object will keep memory of the previous Fibonacci numbers
 var memo = {};
+
 function fibonacci() {
-  "use strict";
-  var n = document.getElementById("num").value;
-  var val = f(n);
-  return val;
+    "use strict";
+    var n = parseInt(document.getElementById("num").value, 10);
+    if (isNaN(n) || n < 0) {
+        document.getElementById("fibonacciLbl").innerText = "Please enter a non-negative integer.";
+        return;
+    }
+    var val = f(n);
+    // Display the result in the span element
+    document.getElementById("fibonacciLbl").innerText = `Fibonacci(${n}) = ${val}`;
 }
 
 function f(n) {
-  var value;
-  // Check if the memory array already contains the requested number
-  if (memo.hasOwnProperty(n)) {
-    value = memo[n];
-  } else {
-    //TODO: Implement the fibonacci function here!
+    // Base cases
+    if (n <= 0) return 0; // Fibonacci(0) = 0
+    if (n === 1) return 1; // Fibonacci(1) = 1
 
-    memo[n] = value;
-  }
-
-  return value;
+    // Check if the memory object already contains the requested number
+    if (memo.hasOwnProperty(n)) {
+        return memo[n];
+    } else {
+        // Calculate Fibonacci number recursively and store it in memo
+        var value = f(n - 1) + f(n - 2);
+        memo[n] = value; // Store the computed value in memo
+        return value;
+    }
 }
-console.log(fibonacci(15));
+
+// Add event listener to the button
+document.getElementById("btn").addEventListener("click", fibonacci);

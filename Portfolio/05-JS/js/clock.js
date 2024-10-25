@@ -12,42 +12,58 @@ function drawFace(ctx, radius) {
   ctx.fill();
 
   // Draw the edge circle with gradient
-  // TODO: (Optional) add a gradient circle
+  grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+  grad.addColorStop(0, 'black');
+  grad.addColorStop(0.5, 'blue');
+  grad.addColorStop(1, 'black');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius * 0.1;
+  ctx.stroke();
 
   // Center circle
-  // TODO: make the central black circle
+  ctx.beginPath();
+  ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+  ctx.fillStyle = '#C8C8C8';
+  ctx.fill();
 }
 
 function drawNumbers(ctx, radius) {
-  //TODO: Make sure you show all the numbers
   var ang;
-  var num = 1;
+  var num;
   ctx.font = radius * 0.15 + "px arial";
   ctx.textBaseline = "middle";
-  ctx.fillStyle = "#333";
+  ctx.fillStyle = "black";
   ctx.textAlign = "center";
-  ang = (num * Math.PI) / 6;
-  ctx.rotate(ang);
-  ctx.translate(0, -radius * 0.85);
-  ctx.rotate(-ang);
-  ctx.fillText(num.toString(), 0, 0);
-  ctx.rotate(ang);
-  ctx.translate(0, radius * 0.85);
-  ctx.rotate(-ang);
+  
+  for(num = 1; num <= 12; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius * 0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius * 0.85);
+    ctx.rotate(-ang);
+  }
 }
 
 function drawTime(ctx, radius) {
-  // TODO: Calculate the angles of every hand depending on the time
   var now = new Date();
   var hour = now.getHours();
   var minute = now.getMinutes();
   var second = now.getSeconds();
+  
   //hour
   hour = hour % 12;
+  hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60)) + (second * Math.PI / (360 * 60));
   drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+  
   //minute
+  minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
   drawHand(ctx, minute, radius * 0.8, radius * 0.07);
+  
   // second
+  second = (second * Math.PI / 30);
   drawHand(ctx, second, radius * 0.9, radius * 0.02);
 }
 
