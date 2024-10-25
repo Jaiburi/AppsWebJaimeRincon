@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of Clans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container text-center">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://supercell.com/en/games/clashofclans/">Clash of Clans</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Troops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Buildings</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Resources
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Gold</a></li>
+                                <li><a class="dropdown-item" href="#">Elixir</a></li>
+                                <li><a class="dropdown-item" href="#">Dark Elixir</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Troop Types
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <strong>Barbarians, Archers, and Goblins.</strong> These are the basic troops that you can train in your barracks.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Buildings Overview
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>Defensive and Offensive structures.</strong> Learn about the best ways to protect your village.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3">
+            <button type="button" class="btn btn-primary">Attack</button>
+            <button type="button" class="btn btn-success">Upgrade</button>
+            <button type="button" class="btn btn-warning">Defend</button>
+        </div>
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="Troop Actions">
+                <button type="button" class="btn btn-secondary">Train</button>
+                <button type="button" class="btn btn-secondary">Donate</button>
+                <button type="button" class="btn btn-secondary">Request</button>
+            </div>
+        </div>
+
+        <div class="card my-3" style="width: 18rem; margin-left:auto; margin-right:auto;">
+            <img src="images/barbaro.png" class="card-img-top" alt="Troop Card">
+            <div class="card-body">
+                <h5 class="card-title">Barbarian</h5>
+                <p class="card-text">A strong melee fighter. Good for early game attacks.</p>
+                <a href="https://clashofclans.fandom.com/wiki/Barbarian" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Show Modal
+        </button>
+        <div class="modal" tabindex="-1" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Clash of Clans Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Here's some information about Clash of Clans.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-lg btn-info" data-bs-toggle="popover" data-bs-title="Game Tips" data-bs-content="Don't forget to upgrade your defenses!">
+            Click for Tips
+        </button>
+
+        <div class="progress my-3" role="progressbar" aria-label="Resource progress" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar w-60" style="width: 60%;">60%</div>
+        </div>
+
+        <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Gather resources to build your village!">
+            Resource Tips
+        </button>
+
+        <a class="icon-link icon-link-hover" href="#">
+            Icon link to resources
+            <svg class="bi" aria-hidden="true" width="1em" height="1em"><use xlink:href="#arrow-right"></use></svg>
+        </a>
+
+        <form class="form-floating my-3">
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="Enter your village name">
+            <label for="floatingInputValue">Village Name</label>
+        </form>
+
+        <span class="border border-danger" style="display: inline-block; width: 100px; height: 100px;"></span>
+        <div class="p-3 mb-2 bg-danger text-white">Clash of Clans!</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
