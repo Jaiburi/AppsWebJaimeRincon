@@ -6,13 +6,13 @@ These exercises will just show multiple ways in which JS can interact with our w
 
 ---
 
-## Clock - 2 pts
+## Clock - 2 pts Ready
 
 Complete the clock exercise by completing the tasks requested in the code by the _TODO_ labels.
 
 ---
 
-## Fibonacci - 1 pt
+## Fibonacci - 1 pt Ready
 
 Solve for the requested fibonacci number.
 
@@ -24,7 +24,7 @@ Move the image around the screen using the controls. Make sure that it always st
 
 ---
 
-## Primes - 2 pts
+## Primes - 2 pts Ready
 
 Extract the prime factors of the number given and show them in the "pf" span.
 
