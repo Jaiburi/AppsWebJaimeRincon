@@ -1,0 +1,28 @@
+{
+  "name": "07-basicnode",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Portfolio7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaiburi/AppsWebJaimeRincon.git"
+  },
+  "keywords": [
+    "Example"
+  ],
+  "author": "Jaime Rincon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaiburi/AppsWebJaimeRincon/issues"
+  },
+  "homepage": "https://github.com/Jaiburi/AppsWebJaimeRincon#readme",
+  "dependencies": {
+    "star-wars-quotes": "^1.0.2",
+    "superheroes": "^4.0.0",
+    "supervillains": "^4.0.0"
+  }
+}
