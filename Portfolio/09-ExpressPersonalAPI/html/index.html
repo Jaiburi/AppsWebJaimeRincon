@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express test</title>
+    <link href="../css/styles.css" type="text/css" rel="stylesheet"/>
+    <title>Express Test</title>
 </head>
-
 <body>
     <% if (locals.error) { %>
-        <h3>
-            <%= error %>
-        </h3>
+        <h3><%= error %></h3>
+    <% } %>
+    
+    <form action="/greet" method="get">
+        Register:
+        <input type="text" name="name" id="name" placeholder="Name" required>
+        <input type="submit" value="Go Next">
+    </form>
+
+    <% if (names.length !== 0) { %>
+        <% for (let i = 0; i < names.length; i++) { %>
+            <h4>
+                Hello <a href="wazzup?source=<%= i %>"><%= names[i] %></a>
+            </h4>
         <% } %>
-            <form action="/greet" method="get">
-                Register:
-                <input type="text" name="name" id="name" placeholder="Name">
-                <input type="submit" value="go next">
-            </form>
+    <% } %>
 
+    <form action="/task" method="POST">
+        New Task:
+        <input type="text" name="task" id="task"  placeholder="Task" required>
+        <input type="submit">
+    </form>
+
+    <h1>TO DO LIST</h1>    
+    <% if (tasks.length > 0) { %>    
+        <ul class="list">
+        <% for (let i = 0; i < tasks.length; i++) { %> 
+            <li>
+                <%= tasks[i] %>
+                <a href="/delete?source=<%= i %>">Delete</a>
+                <button onclick="location.href='/up?source=<%= i %>';">Move Up</button>
+                <button onclick="location.href='/down?source=<%= i %>';">Move Down</button>
+            </li>
+        <% } %>
+        </ul>
+    <% } else { %>
+        <p>No tasks available. Please add a task.</p>
+    <% } %>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </body>
-
 </html>
