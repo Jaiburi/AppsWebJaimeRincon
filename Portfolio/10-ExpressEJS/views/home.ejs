@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h2>Blog Posts</h2>
+
+    <!-- New Post Form -->
+    <div class="new-post">
+        <h3>Create New Post</h3>
+        <form action="/post" method="POST">
+            <input type="text" name="title" placeholder="Post Title" required>
+            <textarea name="content" placeholder="Post Content" required></textarea>
+            <input type="submit" value="Create Post">
+        </form>
+    </div>
+
+    <!-- Posts List -->
+    <div class="posts">
+        <% posts.forEach(post => { %>
+            <article>
+                <h3><%= post.title %></h3>
+                <p>
+                    <%= post.content.substring(0, 100) %>
+                    <% if(post.content.length > 100) { %>...
+                    <% } %>
+                </p>
+                <a href="/post/<%= post.id %>">Read More</a>
+            </article>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

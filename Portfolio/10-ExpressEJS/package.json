@@ -1,0 +1,25 @@
+{
+  "name": "10-expressejs",
+  "version": "1.0.0",
+  "description": "Expressejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaiburi/AppsWebJaimeRincon.git"
+  },
+  "author": "Jaime Rincon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaiburi/AppsWebJaimeRincon/issues"
+  },
+  "homepage": "https://github.com/Jaiburi/AppsWebJaimeRincon#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "https": "^1.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <img src="/images/StarLion.png" alt="lion brewery" />
+    <h1>Welcome to my landing page</h1>
+    
+    <!-- Two forms for secure/unsecure login -->
+    <div class="login-forms">
+        <div class="unsecured">
+            <h3>Unsecured Login (GET)</h3>
+            <form action="/login" method="GET">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required />
+                <input type="submit" value="Login (Unsecured)" />
+            </form>
+        </div>
+
+        <div class="secured">
+            <h3>Secured Login (POST)</h3>
+            <form action="/login" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required />
+                <input type="submit" value="Login (Secured)" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
