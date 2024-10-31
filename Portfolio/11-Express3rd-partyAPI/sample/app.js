@@ -6,6 +6,10 @@ const FormData = require("form-data");
 
 const app = express();
 
+require('dotenv').config();
+
+var akey = process.env.KEY;
+
 // https get
 app.get("/", (req, res) => {
   var url = "http://placekitten.com/g/300/300";
