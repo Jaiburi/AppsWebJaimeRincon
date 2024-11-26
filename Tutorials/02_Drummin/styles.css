@@ -8,48 +8,13 @@ h1 {
   color: #DBEDF3;
   font-family: "Arvo", cursive;
   text-shadow: 3px 0 #DA0463;
-
-}
-
-.w {
-
-}
-
-.a {
-
-}
-
-.s {
-
-}
-
-.d {
-
-}
-
-.j {
-
-}
-
-.k {
-
-}
-
-.l {
-
 }
 
 .set {
   margin: 10% auto;
-}
-
-.pressed {
-  box-shadow: 0 3px 4px 0 #DBEDF3;
-  opacity: 0.5;
-}
-
-.red {
-  color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .drum {
@@ -68,4 +33,40 @@ h1 {
   text-align: center;
   margin: 10px;
   background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.w {
+  background-image: url('images/crash.png');
+}
+
+.a {
+  background-image: url('images/kick.png');
+}
+
+.s {
+  background-image: url('images/snare.png');
+}
+
+.d {
+  background-image: url('images/tom1.png');
+}
+
+.j {
+  background-image: url('images/tom2.png');
+}
+
+.k {
+  background-image: url('images/tom3.png');
+}
+
+.l {
+  background-image: url('images/tom4.png');
+}
+
+.drum:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
