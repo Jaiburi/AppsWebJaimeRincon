@@ -1,3 +1,16 @@
+body {
+  background-color: #F7F7F7;
+  color: #FF6347;
+  font-family: 'Indie Flower', cursive;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 8rem;
+  margin: 30px;
+  color: #FF6347;
+}
+
 .container {
   width: 70%;
   margin: auto;
@@ -5,20 +18,17 @@
 }
 
 .dice {
-  text-align: center;
   display: inline-block;
-
-}
-
-h1 {
-  margin: 30px;
-  font-size: 8rem;
+  text-align: center;
+  margin: 20px;
 }
 
 p {
   font-size: 2rem;
+  margin: 10px;
 }
 
 img {
   width: 80%;
+  margin-top: 10px;
 }
