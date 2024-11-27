@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+  background-color: #f8f9fa; /* Light background for the app */
+  font-family: Arial, sans-serif; /* Set a clean font */
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container for the movie cards */
+.container {
+  max-width: 1200px; /* Limit the width of the container */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Card Styles */
+.card {
+  border: 1px solid #ced4da; /* Light border around the card */
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden; /* Ensure the image and content fit nicely */
+  transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+/* Card Image Styles */
+.card-img-top {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Card Body Styles */
+.card-body {
+  padding: 1rem; /* Add padding inside the card */
+  background-color: #ffffff; /* White background for card body */
+}
+
+/* Card Title Styles */
+.card-title {
+  font-size: 1.25rem; /* Larger font size for title */
+  margin-bottom: 0.5rem; /* Space below title */
+}
+
+/* Card Subtitle Styles */
+.card-subtitle {
+  font-size: 1rem; /* Subtitle font size */
+  color: #6c757d; /* Grey color for subtitle */
+}
+
+/* Link Styles */
+.card-link {
+  text-decoration: none; /* Remove underline from links */
+  color: #007bff; /* Bootstrap primary color */
+  transition: color 0.2s; /* Smooth color transition */
+}
+
+/* Link Hover Effect */
+.card-link:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Hover Effect for Card */
+.card:hover {
+  transform: scale(1.05); /* Scale up card on hover */
+}
+
+/* Affiliation Logo Styles */
+.affiliation-logo {
+  width: 100px; /* Set a fixed width for the logo */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute; /* Position it absolutely within the card */
+  bottom: 10px; /* Position from the bottom */
+  left: 10px; /* Position from the left */
+}
+
+/* Good Affiliation (Blue) */
+.affiliation-logo.jedi {
+  background-color: blue; /* Blue background for Jedi */
+}
+
+/* Evil Affiliation (Red) */
+.affiliation-logo.sith {
+  background-color: red; /* Red background for Sith */
+}
+
+/* Comments Section Styles */
+.section-title {
+  font-size: 1.5rem; /* Larger font size for comments section */
+  margin-top: 20px; /* Space above comments section */
+}
+
+.comment {
+  margin-bottom: 10px; /* Space between comments */
+}
+
+.comment h6 {
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Bold for the commenter name */
+}
+
+.comment p {
+  margin: 0; /* Remove default margin */
+  color: #6c757d; /* Grey color for comment text */
+}
